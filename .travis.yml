@@ -1,0 +1,44 @@
+language: java
+
+sudo: required
+
+services:
+  # https://docs.travis-ci.com/user/docker/#Using-Docker-Compose
+  - docker
+
+
+cache:
+  apt: true
+  directories:
+  - $HOME/.m2
+  - $HOME/.autoconf
+  - $HOME/.dp_cache
+
+  # under project directory, same as .git
+  - .jar_cache_in_git_branch
+
+env:
+
+  global:
+    # http://stackoverflow.com/questions/35565652/docker-compose-up-causing-client-is-newer-than-server-error
+    - COMPOSE_API_VERSION=auto
+
+    - ROOT_DIR=/home/travis/build/DataPipelineInc/dp-data-system
+
+    - DOCKER_EMAIL=docker@datapipeline.com
+    - DOCKER_USERNAME=datapipelinedocker
+    - DOCKER_PASSWORD=DpDocker
+
+before_install:
+  - ./ci/travis/install_docker_compose.sh
+
+install:
+  - ./ci/xxxx/xxxx.sh
+
+script:
+  - ./ci/run.sh
+
+# just for slack
+notifications:
+  slack:
+    secure:
