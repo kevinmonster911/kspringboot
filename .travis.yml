@@ -23,11 +23,11 @@ env:
     # http://stackoverflow.com/questions/35565652/docker-compose-up-causing-client-is-newer-than-server-error
     - COMPOSE_API_VERSION=auto
 
-    - ROOT_DIR=/home/travis/build/DataPipelineInc/dp-data-system
+    - ROOT_DIR=xxxxx
 
-    - DOCKER_EMAIL=docker@datapipeline.com
-    - DOCKER_USERNAME=datapipelinedocker
-    - DOCKER_PASSWORD=DpDocker
+    - DOCKER_EMAIL=xxxxx
+    - DOCKER_USERNAME=xxxxxx
+    - DOCKER_PASSWORD=xxxxx
 
 before_install:
   - ./ci/travis/install_docker_compose.sh
