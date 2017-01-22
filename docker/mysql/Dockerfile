@@ -12,4 +12,3 @@ RUN chmod +x /usr/local/bin/run
 
 VOLUME ["/var/lib/mysql"]
 CMD ["/usr/local/bin/run"]
-
